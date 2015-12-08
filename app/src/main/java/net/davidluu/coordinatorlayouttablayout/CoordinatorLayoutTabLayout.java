@@ -12,6 +12,7 @@ import net.davidluu.coordinatorlayoutlinearlayout.R;
 public class CoordinatorLayoutTabLayout extends AppCompatActivity {
 
     private ViewPager viewPager;
+    private TabLayout tabLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,13 +22,13 @@ public class CoordinatorLayoutTabLayout extends AppCompatActivity {
         viewPager = (ViewPager) findViewById(R.id.viewPager);
         viewPager.setAdapter(new ScreenSlidePagerAdapter(getSupportFragmentManager()));
 
-        final TabLayout tabLayout = (TabLayout) findViewById(R.id.tabLayout);
+        tabLayout = (TabLayout) findViewById(R.id.tabLayout);
         tabLayout.setupWithViewPager(viewPager);
     }
 
     private class ScreenSlidePagerAdapter extends FragmentStatePagerAdapter {
 
-        private String tabTitles[] = new String[] { "Tab1", "Tab2", "Tab3", "Tab4", "Tab5", "Tab6", "Tab7" };
+        private String tabTitles[] = new String[] { "Nearby", "Local", "Goods", "Occasions", "Getaways", "Hotels", "Coupons" };
 
         public ScreenSlidePagerAdapter(FragmentManager fm) {
             super(fm);
